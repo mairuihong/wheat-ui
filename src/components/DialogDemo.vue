@@ -12,7 +12,9 @@
       <div>hi</div>
       <div>hi2</div>
     </template>
-      </Dialog>
+  </Dialog>
+  <h1>示例2</h1>
+  <Button @click="showDialog"></Button>
 </template>
 
 <script lang='ts'>
@@ -34,7 +36,10 @@ export default {
     }
     const f2 = () => {
     }
-    return {x, toggle, f1, f2}
+    const showDialog = ()=>{
+      
+    }
+    return {x, toggle, f1, f2, showDialog}
   }
 }
 </script>
