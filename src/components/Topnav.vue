@@ -2,12 +2,15 @@
   <div class="topnav">
     <router-link to="/" class="logo">
       <svg class="icon">
-        <use xlink:href="#icon-list"></use>
+        <use xlink:href="#icon-wheat"></use>
       </svg>
     </router-link>
     <ul class="menu">
       <li>
-        <router-link to="/doc">文档</router-link>
+        <a href="https://github.com/katawaredokiha/wheat-ui.git">GitHub</a>
+      </li>
+      <li>
+        <a href="https://gitee.com/mairuihong/wheat-ui.git">Gitee</a>
       </li>
     </ul>
     <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
@@ -36,21 +39,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #007974;
 .topnav {
-  color: $color;
-  display: flex;
-  padding: 16px;
+  background: white;
+  box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.25);
+  color: #ff9933;
+  padding: 8px 16px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 20;
+  display: flex;
   justify-content: center;
   align-items: center;
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     > svg {
       width: 32px;
       height: 32px;

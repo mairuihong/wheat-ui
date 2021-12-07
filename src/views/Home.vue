@@ -9,7 +9,7 @@
           <h1>Wheat UI</h1>
           <h2>一个厉害的 UI 框架</h2>
           <p class="actions">
-            <a href="https://github.com">GitHub</a>
+            <a href="https://github.com/katawaredokiha/wheat-ui.git">GitHub</a>
             <router-link to="/doc">Get Started</router-link>
           </p>
         </div>
