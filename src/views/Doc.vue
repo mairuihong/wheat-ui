@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Topnav toggleMenuButtonVisible class="nav" />
+    <Topnav toggleMenuButtonVisible class="nav"/>
     <div class="content">
       <aside v-if="menuVisible">
         <h2>开始</h2>
@@ -61,8 +61,8 @@ $aside-index: 10;
   }
   > .content {
     flex-grow: 1;
-    padding-top: 60px;
-    padding-left: 156px;
+    padding-top: 48px;
+    padding-left: 150px;
     @media (max-width: 500px) {
       padding-left: 0;
     }
@@ -80,13 +80,13 @@ $aside-index: 10;
   }
 }
 aside {
-  background: lightblue;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(45deg, #FBAB7E 0%, #F7CE68 100%);
   width: 150px;
-  padding: 16px 0;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 70px;
+  padding: 56px 0 16px;
   height: 100%;
   z-index: $aside-index;
   > h2 {
@@ -95,6 +95,7 @@ aside {
   }
   > ol {
     > li {
+      position: relative;
       > a {
         display: block;
         padding: 4px 16px;
@@ -102,6 +103,15 @@ aside {
       }
       .router-link-active {
         background: white;
+        &::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 3px;
+          height: 100%;
+          background: #ff9933;
+        }
       }
     }
   }
