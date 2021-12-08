@@ -6,7 +6,7 @@
         <span>#</span>常规用法
       </h2>
       <p>
-        使用<span>v-model</span>绑定<span>Boolean</span>控制开关的开合
+        使用 <span>v-model</span> 绑定 <span>Boolean</span> 控制开关的开合
       </p>
       <Demo :component="Switch1Demo" />
     </div>
@@ -15,7 +15,7 @@
         <span>#</span>disabled用法
       </h2>
       <p>
-        在组件中添加<span>disabled</span>属性，可<span>禁用Switch</span>组件
+        在组件中添加 <span>disabled</span> 属性，可<span>禁用Switch</span>组件
       </p>
       <Demo :component="Switch2Demo" />
     </div>

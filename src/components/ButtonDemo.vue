@@ -6,7 +6,7 @@
         <span>#</span>常规用法
       </h2>
       <p>
-        使用<span>theme</span>属性控制<span>Button</span>的样式
+        使用 <span>theme</span> 属性控制 <span>Button</span> 的样式
       </p>
       <Demo :component="Button1Demo" />
     </div>
@@ -15,7 +15,7 @@
         <span>#</span>支持控制size
       </h2>
       <p>
-        使用<span>size</span>属性控制<span>Button</span>的大小
+        使用 <span>size</span> 属性控制 <span>Button</span> 的大小
       </p>
       <Demo :component="Button2Demo" />
     </div>
@@ -24,7 +24,7 @@
         <span>#</span>支持level
       </h2>
       <p>
-        使用<span>level</span>属性控制<span>Button</span>的类型
+        使用 <span>level</span> 属性控制 <span>Button</span> 的类型
       </p>
       <Demo :component="Button3Demo" />
     </div>
@@ -33,7 +33,7 @@
         <span>#</span>支持level
       </h2>
       <p>
-        使用<span>disabled</span>属性可<span>禁用Button</span>按钮
+        使用 <span>disabled</span> 属性可<span>禁用Button</span>按钮
       </p>
       <Demo :component="Button4Demo" />
     </div>
@@ -42,7 +42,7 @@
         <span>#</span>支持level
       </h2>
       <p>
-        使用<span>loading</span>属性控制<span>Button</span>处于加载状态
+        使用 <span>loading</span> 属性控制 <span>Button</span> 处于加载状态
       </p>
       <Demo :component="Button5Demo" />
     </div>
