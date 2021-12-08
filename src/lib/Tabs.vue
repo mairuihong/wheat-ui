@@ -1,31 +1,32 @@
 <template>
-  <div class="gulu-tabs">
-    <div class="gulu-tabs-nav" ref="container">
+  <div class="wheat-tabs">
+    <div class="wheat-tabs-nav" ref="container">
       <div
-        class="gulu-tabs-nav-item"
-        v-for="(t, index) in titles"
-        :ref="
+          class="wheat-tabs-nav-item"
+          v-for="(t, index) in titles"
+          :ref="
           (el) => {
             if (t === selected) selectedItem = el;
           }
         "
-        @click="select(t)"
-        :class="{ selected: t === selected }"
-        :key="index"
+          @click="select(t)"
+          :class="{ selected: t === selected }"
+          :key="index"
       >
         {{ t }}
       </div>
-      <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
+      <div class="wheat-tabs-nav-indicator" ref="indicator"></div>
     </div>
-    <div class="gulu-tabs-content">
-      <component :is="current" :key="current.props.title" />
+    <div class="wheat-tabs-content">
+      <component :is="current" :key="current.props.title"/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Tab from "./Tab.vue";
-import { computed, onMounted, ref, watchEffect } from "vue";
+import Tab from './Tab.vue';
+import {computed, onMounted, ref, watchEffect} from 'vue';
+
 export default {
   props: {
     selected: {
@@ -39,17 +40,17 @@ export default {
 
     onMounted(() => {
       watchEffect(
-        () => {
-          const { width } = selectedItem.value.getBoundingClientRect();
-          indicator.value.style.width = width + "px";
-          const { left: left1 } = container.value.getBoundingClientRect();
-          const { left: left2 } = selectedItem.value.getBoundingClientRect();
-          const left = left2 - left1;
-          indicator.value.style.left = left + "px";
-        },
-        {
-          flush: "post",
-        }
+          () => {
+            const {width} = selectedItem.value.getBoundingClientRect();
+            indicator.value.style.width = width + 'px';
+            const {left: left1} = container.value.getBoundingClientRect();
+            const {left: left2} = selectedItem.value.getBoundingClientRect();
+            const left = left2 - left1;
+            indicator.value.style.left = left + 'px';
+          },
+          {
+            flush: 'post',
+          }
       );
     });
 
@@ -57,7 +58,7 @@ export default {
     defaults.forEach((tag) => {
       // @ts-ignore
       if (tag.type.name !== Tab.name) {
-        throw new Error("Tabs 子标签必须是 Tab");
+        throw new Error('Tabs 子标签必须是 Tab');
       }
     });
     const current = computed(() => {
@@ -67,7 +68,7 @@ export default {
       return tag.props.title;
     });
     const select = (title: string) => {
-      context.emit("update:selected", title);
+      context.emit('update:selected', title);
     };
     return {
       current,
@@ -86,7 +87,7 @@ export default {
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
-.gulu-tabs {
+.wheat-tabs {
   &-nav {
     display: flex;
     color: $color;
