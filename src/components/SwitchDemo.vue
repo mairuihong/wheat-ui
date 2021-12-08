@@ -1,7 +1,24 @@
 <template>
   <div>
-    <Demo :component="Switch1Demo" />
-    <Demo :component="Switch2Demo" />
+    <div class="title">Switch组件示例</div>
+    <div>
+      <h2>
+        <span>#</span>常规用法
+      </h2>
+      <p>
+        使用<span>v-model</span>绑定<span>Boolean</span>控制开关的开合
+      </p>
+      <Demo :component="Switch1Demo" />
+    </div>
+    <div>
+      <h2>
+        <span>#</span>disabled用法
+      </h2>
+      <p>
+        在组件中添加<span>disabled</span>属性，可<span>禁用Switch</span>组件
+      </p>
+      <Demo :component="Switch2Demo" />
+    </div>
   </div>
 </template>
 
@@ -19,30 +36,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$border-color: #d9d9d9;
-.demo {
-  border: 1px solid $border-color;
-  margin: 16px 0 32px;
-  > h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
-  }
-  &-component {
-    padding: 16px;
-  }
-  &-actions {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-  }
-  &-code {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-    > pre {
-      line-height: 1.1;
-      font-family: Consolas, "Courier New", Courier, monospace;
-      margin: 0;
-    }
-  }
+.title {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+h2 {
+  font-size: 20px;
+}
+p {
+  margin-left: 12px;
+}
+span {
+  color: #ff9933;
+  font-weight: 700;
 }
 </style>
