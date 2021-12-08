@@ -4,10 +4,10 @@
 
 <template>
   <div>
-    <Button level="main" @click="toggle">打开对话框</Button>
+    <Button level="warning" @click="toggle">打开对话框</Button>
     <Dialog
         v-model:visible="showDialog"
-        :closeOnClick="true"
+        :closeOnClick="false"
     >
       <template v-slot:title>
         可自定义标题

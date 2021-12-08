@@ -8,7 +8,6 @@
     <Dialog
         v-model:visible="showDialog"
         add-button
-        :closeOnClickOverlay="true"
         :ok="f1"
         :cancel="f2"
     >

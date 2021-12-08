@@ -15,10 +15,10 @@
     </div>
     <div>
       <h2>
-        <span>#</span>支持点击遮罩层关闭
+        <span>#</span>禁用遮罩层关闭
       </h2>
       <p>
-        通过传入 <span>closeOnClick</span> 属性（不传入默认为 false），使对话框可以<span>点击遮罩层</span>关闭
+        通过传入 <span>closeOnClick</span> 属性（不传入默认为 true），使对话框可以<span>禁用点击遮罩层</span>关闭
       </p>
       <Demo :component="Dialog2Demo"/>
     </div>
