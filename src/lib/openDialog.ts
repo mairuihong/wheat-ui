@@ -14,6 +14,7 @@ export const openDialog = (options) => {
         Dialog,
         {
           visible: true,
+          addButton: true,
           "onUpdate:visible": (newVisible) => {
             if (newVisible === false) {
               close();

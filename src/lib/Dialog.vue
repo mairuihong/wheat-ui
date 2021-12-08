@@ -1,17 +1,17 @@
 <template>
   <template v-if="visible">
     <Teleport to='body'>
-      <div class="gulu-dialog-overlay" @click="onClickOverlay"></div>
-      <div class="gulu-dialog-wrapper">
-        <div class="gulu-dialog">
+      <div class="wheat-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="wheat-dialog-wrapper">
+        <div class="wheat-dialog">
           <header>
-            <slot name="title" />
-            <span @click="close" class="gulu-dialog-close"></span>
-            </header>
+            <slot name="title"/>
+            <span @click="close" class="wheat-dialog-close"></span>
+          </header>
           <main>
-            <slot name="content" />
+            <slot name="content"/>
           </main>
-          <footer>
+          <footer v-show="addButton">
             <Button level="main" @click="ok">OK</Button>
             <Button @click="cancel">Cancel</Button>
           </footer>
@@ -22,7 +22,8 @@
 </template>
 
 <script lang="ts">
-import Button from './Button.vue'
+import Button from './Button.vue';
+
 export default {
   props: {
     title: {
@@ -33,9 +34,13 @@ export default {
       type: Boolean,
       default: false
     },
-    closeOnClickOverlay: {
+    closeOnClick: {
       type: Boolean,
       default: true
+    },
+    addButton: {
+      type: Boolean,
+      default: false
     },
     ok: {
       type: Function
@@ -48,37 +53,37 @@ export default {
     Button
   },
   setup(props, context) {
-    const close = ()=>{
-      context.emit('update:visible', false)
-    }
+    const close = () => {
+      context.emit('update:visible', false);
+    };
     const onClickOverlay = () => {
-      if (props.closeOnClickOverlay) {
-        close()
+      if (props.closeOnClick) {
+        close();
       }
-    }
+    };
     const ok = () => {
       if (props.ok?.() !== false) {// props.ok && props.ok() !== false
-        close()
+        close();
       }
-    }
+    };
     const cancel = () => {
-      props.cancel?.() // props.cancel && props.cancel()
-      close()
-    }
+      props.cancel?.(); // props.cancel && props.cancel()
+      close();
+    };
     return {
       close,
       onClickOverlay,
       ok,
       cancel
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
-.gulu-dialog {
+.wheat-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
@@ -100,7 +105,7 @@ $border-color: #d9d9d9;
     transform: translate(-50%, -50%);
     z-index: 11;
   }
-  >header {
+  > header {
     padding: 12px 16px;
     border-bottom: 1px solid $border-color;
     display: flex;
@@ -108,10 +113,10 @@ $border-color: #d9d9d9;
     justify-content: space-between;
     font-size: 20px;
   }
-  >main {
+  > main {
     padding: 12px 16px;
   }
-  >footer {
+  > footer {
     border-top: 1px solid $border-color;
     padding: 12px 16px;
     text-align: right;
@@ -119,16 +124,17 @@ $border-color: #d9d9d9;
   &-close {
     position: relative;
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
     cursor: pointer;
     &::before,
     &::after {
       content: '';
       position: absolute;
+      width: 60%;
       height: 1px;
       background: black;
-      width: 100%;
       top: 50%;
       left: 50%;
     }
@@ -139,5 +145,8 @@ $border-color: #d9d9d9;
       transform: translate(-50%, -50%) rotate(45deg);
     }
   }
+}
+.wheat-dialog-close:hover {
+  background: $border-color;
 }
 </style>
