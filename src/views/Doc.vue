@@ -116,4 +116,21 @@ aside {
     }
   }
 }
+//示例描述样式
+::v-deep main {
+  .title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    margin-left: 12px;
+  }
+  span {
+    color: #ff9933;
+    font-weight: 700;
+  }
+}
 </style> 

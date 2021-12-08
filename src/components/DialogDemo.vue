@@ -6,7 +6,7 @@
         <span>#</span>常规用法
       </h2>
       <p>
-        使用<span></span>绑定<span>Boolean</span>打开和关闭对话框
+        使用 <span>v-model</span> 绑定 <span>Boolean</span> 打开和关闭对话框
       </p>
       <p>
         使用<span>slot</span>（<span>title</span> 和 <span>content</span>) 可自定义对话框中的标题和内容的样式
@@ -62,20 +62,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.title {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-h2 {
-  font-size: 20px;
-}
-p {
-  margin-left: 12px;
-}
-span {
-  color: #ff9933;
-  font-weight: 700;
-}
-</style>

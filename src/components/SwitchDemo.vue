@@ -33,20 +33,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.title {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-h2 {
-  font-size: 20px;
-}
-p {
-  margin-left: 12px;
-}
-span {
-  color: #ff9933;
-  font-weight: 700;
-}
-</style>
