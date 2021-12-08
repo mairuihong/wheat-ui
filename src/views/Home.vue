@@ -7,7 +7,7 @@
         </div>
         <div class="details">
           <h1>Wheat UI</h1>
-          <h2>一个厉害的 UI 框架</h2>
+          <h2>一个简易的 UI 框架</h2>
           <p class="actions">
             <a href="https://github.com/katawaredokiha/wheat-ui.git">GitHub</a>
             <router-link to="/doc">Get Started</router-link>
@@ -33,10 +33,10 @@
         </li>
         <li>
           <svg>
-            <use xlink:href="#icon-lights"></use>
+            <use xlink:href="#icon-write"></use>
           </svg>
           <h3>代码易读</h3>
-          <p>每个组件的源代码都极其简洁</p>
+          <p>每个组件的源代码简洁</p>
         </li>
       </ul>
     </div>
