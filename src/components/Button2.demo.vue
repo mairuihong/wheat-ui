@@ -3,7 +3,7 @@
 </demo>
 
 <template>
-  <div>
+  <div class="size-demo">
     <div>
       <Button size="big">大大大</Button>
       <Button>普普通</Button>
@@ -30,3 +30,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.size-demo {
+  >:nth-child(1), >:nth-child(2) {
+    margin-bottom: 8px;
+  }
+}
+</style>
+

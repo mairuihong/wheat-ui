@@ -1,25 +1,26 @@
 <template>
-  <button class="gulu-button" :class="classes" :disabled="disabled">
-    <span v-if="loading" class="gulu-loadingIndicator"></span>
-    <slot />
+  <button class="wheat-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="wheat-loadingIndicator"></span>
+    <slot/>
   </button>
 </template>
 
 <script lang='ts'>
-import { computed } from "@vue/reactivity";
+import {computed} from '@vue/reactivity';
+
 export default {
   props: {
     theme: {
       type: String,
-      default: "button",
+      default: 'button',
     },
     size: {
       type: String,
-      default: "normal",
+      default: 'normal',
     },
     level: {
       type: String,
-      default: "normal",
+      default: 'normal',
     },
     disabled: {
       type: Boolean,
@@ -31,15 +32,15 @@ export default {
     },
   },
   setup(props) {
-    const { theme, size, level } = props;
+    const {theme, size, level} = props;
     const classes = computed(() => {
       return {
-        [`gulu-theme-${theme}`]: theme,
-        [`gulu-size-${size}`]: size,
-        [`gulu-level-${level}`]: level,
+        [`wheat-theme-${theme}`]: theme,
+        [`wheat-size-${size}`]: size,
+        [`wheat-level-${level}`]: level,
       };
     });
-    return { classes };
+    return {classes};
   },
 };
 </script>
@@ -51,11 +52,13 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$yellow: #f5c401;
 $grey: grey;
-.gulu-button {
+.wheat-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
+  font-size: 16px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -69,6 +72,7 @@ $grey: grey;
   transition: background 250ms;
   & + & {
     margin-left: 8px;
+    margin-bottom: 8px;
   }
   &:hover,
   &:focus {
@@ -81,7 +85,7 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.gulu-theme-link {
+  &.wheat-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -90,7 +94,7 @@ $grey: grey;
       color: lighten($blue, 10%);
     }
   }
-  &.gulu-theme-text {
+  &.wheat-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -99,20 +103,18 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
-  &.gulu-theme-button {
-    &.gulu-size-big {
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px;
-    }
-    &.gulu-size-small {
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
-    }
+  &.wheat-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
   }
-  &.gulu-theme-button {
-    &.gulu-level-main {
+  &.wheat-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
+  }
+  &.wheat-theme-button {
+    &.wheat-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -122,7 +124,17 @@ $grey: grey;
         border-color: darken($blue, 10%);
       }
     }
-    &.gulu-level-danger {
+    &.wheat-level-warning {
+      background: $yellow;
+      border-color: $yellow;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($yellow, 10%);
+        border-color: darken($yellow, 10%);
+      }
+    }
+    &.wheat-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -133,8 +145,15 @@ $grey: grey;
       }
     }
   }
-  &.gulu-theme-link {
-    &.gulu-level-danger {
+  &.wheat-theme-link {
+    &.wheat-level-warning {
+      color: $yellow;
+      &:hover,
+      &:focus {
+        color: darken($yellow, 10%);
+      }
+    }
+    &.wheat-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -142,15 +161,22 @@ $grey: grey;
       }
     }
   }
-  &.gulu-theme-text {
-    &.gulu-level-main {
+  &.wheat-theme-text {
+    &.wheat-level-main {
       color: $blue;
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
-    &.gulu-level-danger {
+    &.wheat-level-warning {
+      color: $yellow;
+      &:hover,
+      &:focus {
+        color: darken($yellow, 10%);
+      }
+    }
+    &.wheat-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -158,23 +184,24 @@ $grey: grey;
       }
     }
   }
-  &.gulu-theme-button {
+  &.wheat-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
+      background: darken(white, 5%);
       &:hover {
         border-color: $grey;
       }
     }
   }
-  &.gulu-theme-link,
-  &.gulu-theme-text {
+  &.wheat-theme-link,
+  &.wheat-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
-  > .gulu-loadingIndicator {
+  > .wheat-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -183,10 +210,10 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: gulu-spin 1s infinite linear;
+    animation: wheat-spin 1s infinite linear;
   }
 }
-@keyframes gulu-spin {
+@keyframes wheat-spin {
   0% {
     transform: rotate(0deg);
   }
