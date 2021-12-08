@@ -26,7 +26,6 @@
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
 import Demo from "./Demo.vue";
-import { ref } from "vue";
 export default {
   components: { Demo },
   setup() {
@@ -37,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 12px;
 }
 h2 {
