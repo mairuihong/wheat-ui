@@ -192,7 +192,7 @@ export default {
       }
       > h3 {
         grid-area: title;
-        font-size: 28px;
+        font-size: 24px;
       }
       > p {
         grid-area: text;
