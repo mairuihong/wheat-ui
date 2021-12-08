@@ -72,8 +72,9 @@ export default {
     }
   }
   > .toggleAside {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
     position: absolute;
     left: 16px;
     top: 50%;
