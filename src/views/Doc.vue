@@ -61,7 +61,7 @@ $aside-index: 10;
   }
   > .content {
     flex-grow: 1;
-    padding-top: 48px;
+    margin-top: 48px;
     padding-left: 150px;
     @media (max-width: 500px) {
       padding-left: 0;
@@ -69,6 +69,7 @@ $aside-index: 10;
   }
 }
 .content {
+  height: calc(100% - 48px);
   display: flex;
   > aside {
     flex-shrink: 0;
@@ -76,6 +77,7 @@ $aside-index: 10;
   > main {
     flex-grow: 1;
     padding: 16px;
+    overflow-y: auto;
     background: white;
   }
 }
