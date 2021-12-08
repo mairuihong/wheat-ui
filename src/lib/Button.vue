@@ -58,7 +58,6 @@ $grey: grey;
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
-  font-size: 16px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
