@@ -1,6 +1,6 @@
 {
-  "name": "wheat-ui",
-  "version": "0.0.1",
+  "name": "wheat-ui-1",
+  "version": "0.0.2",
   "files": [
     "dist/lib/*"
   ],

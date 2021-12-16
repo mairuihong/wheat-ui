@@ -6,5 +6,7 @@ Wheat UI 是一款基于 Vue 3 和 TypeScript 的简易 UI 组件库。
 
 不建议将此 UI 库用于生产环境。为方便学习和使用，源代码上传到了 [GitHub](https://github.com/katawaredokiha/wheat-ui.git) 和 [Gitee](https://gitee.com/mairuihong/wheat-ui.git) 。使用方法详见安装和开始使用章节。
 
+(注：该组件库并没有发布到 npm，以下安装和开始使用章节仅为文档模板。)
+
 
 下一节：[安装](#/doc/install)
